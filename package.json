@@ -16,7 +16,7 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "jest",
+        "test": "jest --watch",
         "eject": "react-scripts eject"
     },
     "devDependencies": {
@@ -26,9 +26,18 @@
         "enzyme": "^3.10.0",
         "enzyme-adapter-react-16": "^1.15.1",
         "jest": "^24.9.0",
+        "jsdom": "15.2.1",
+        "jsdom-global": "3.0.2",
         "react-test-renderer": "^16.12.0"
     },
     "jest": {
-        "setupFilesAfterEnv": ["<rootDir>/src/TestSettup.js"]
+        "testEnvironment": "jest-environment-node",
+        "setupFilesAfterEnv": [
+            "<rootDir>/src/TestSettup.js"
+        ],
+        "moduleNameMapper": {
+            "\\.(css|less)$": "<rootDir>/src/__test__/__mocks__/styleMock.js",
+            "\\.(gif|ttf|eot|svg)$": "<rootDir>/src/__test__/__mocks__/fileMock.js"
+        }
     }
 }

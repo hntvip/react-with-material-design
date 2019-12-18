@@ -3,13 +3,13 @@ import './App.css';
 import Menu from './components/Menu/Menu';
 import routes from './routes';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
-
+import menus from './constants/Menu';
 class App extends Component {
     render() {
         return (
             <Router>
                 <div>
-                    <Menu />
+                    <Menu menu={menus}/>
                     <div className="container">
                         <div className="row">
                             {this.showContentMenus(routes)}

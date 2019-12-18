@@ -1,18 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 
-const menus = [
-    {
-        name: 'Trang Chủ',
-        to: '/',
-        exact: true
-    },
-    {
-        name: 'Quản Lý Sản Phẩm',
-        to: '/product-list',
-        exact: false
-    }
-];
+
 
 const MenuLink = ({ label, to, activeOnlyWhenExact }) => {
     return (
@@ -35,11 +24,12 @@ const MenuLink = ({ label, to, activeOnlyWhenExact }) => {
 
 class Menu extends Component {
     render() {
+        let  { menu } = this.props;
         return (
             <div className="navbar navbar-default">
                 <a className="navbar-brand">CALL API</a>
                 <ul className="nav navbar-nav">
-                    {this.showMenus(menus)}
+                    {this.showMenus(menu)}
                 </ul>
             </div>
         );
