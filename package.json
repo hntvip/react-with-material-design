@@ -11,6 +11,7 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.0.17",
     "redux": "^3.7.2",
+    "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
@@ -36,8 +37,8 @@
       "<rootDir>/src/TestSettup.js"
     ],
     "moduleNameMapper": {
-      "\\.(css|less)$": "<rootDir>/src/__test__/__mocks__/styleMock.js",
-      "\\.(gif|ttf|eot|svg)$": "<rootDir>/src/__test__/__mocks__/fileMock.js"
+      "\\.(css|less)$": "<rootDir>/src/__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/src/__mocks__/fileMock.js"
     }
   },
   "description": "Dang building",

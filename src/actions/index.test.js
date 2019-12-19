@@ -1,9 +1,17 @@
 import axios from 'axios';
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 import * as actions from './index';
 import * as Types from '../constants/ActionTypes';
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
+// jest.mock('../__mocks__/apiCaller');
 
+// jest.mock('axios');
+
+// Make sure to resolve with a promise
 describe('Test actions creator', () => {
-  jest.mock("axios");
+ 
   it('should be feach all Products', () => {
     var products = [
       {
@@ -29,7 +37,7 @@ describe('Test actions creator', () => {
       id 
     })
   });
-  it('should be return type = ADD and a product as parameter', () => {
+  it.skip('should be return type = ADD and a product as parameter', () => {
     // Mock Jest Fist
     
 
@@ -38,14 +46,18 @@ describe('Test actions creator', () => {
       price: 1000,
       id:1
     }
+    const mockedResponse = Promise.resolve({
+      data: {
+        title: 'Iphone',
+        price: 100
+      }
+   });
 
-    // Using Mock Axios module and call resolve a data 
-    axios.get.mockImplementation(() => 
-      Promise.resolve(resp)
-    )
-    // 
-
+    const store = mockStore({ product });
       
-      
+    return store.dispatch(actions.actGetProductRequest(product.id)).then( data => {
+      console.log(data)
+      //expect(store.getActions()).toEqual(product)
+    })
   });
 });

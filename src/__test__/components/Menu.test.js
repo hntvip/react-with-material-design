@@ -2,7 +2,7 @@ import React from 'react';
 import Menu from '../../components/Menu/Menu';
 import { mount } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
-describe('Test Menu', () => {
+describe.skip('Test Menu', () => {
   let wrapper;
     describe('Show Menu does not show 2 <li>', () => {
       beforeEach(() => {

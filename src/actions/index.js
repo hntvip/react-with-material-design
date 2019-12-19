@@ -49,6 +49,7 @@ export const actAddProduct = (product) => {
 export const actGetProductRequest = (id) => {
     return dispatch => {
         return callApi(`products/${id}`, 'GET', null).then(res => {
+            console.log('res' + res)
             dispatch(actGetProduct(res.data));
         });
     }
