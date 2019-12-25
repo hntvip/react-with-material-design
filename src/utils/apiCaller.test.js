@@ -1,7 +1,8 @@
 import axios from 'axios';
 import callApi from './apiCaller';
 import * as Config from './../constants/Config';
-jest.mock('axios');
+import apiCallerMock from './../constants/Config';
+
 
 
 
